@@ -19,21 +19,21 @@ public class PersonDTO {
 
     private Long id;
 
-    @NotEmpty
-    @Size(min = 2, max = 100)
+    @NotEmpty //Anotação que diz que o o campo não pode ser nulo
+    @Size(min = 2, max = 100) //anotação para informar o tamanho máximo e mínimo
     private String firstName;
 
-    @NotEmpty
-    @Size(min = 2, max = 100)
+    @NotEmpty //Anotação que diz que o o campo não pode ser nulo
+    @Size(min = 2, max = 100) //anotação para informar o tamanho máximo e mínimo
     private String lastName;
 
-    @NotEmpty
-    @CPF
+    @NotEmpty //Anotação que diz que o o campo não pode ser nulo
+    @CPF //Anotação para validar o CPF no formato brasileiro
     private String cpf;
 
     private String birthDate;
 
     @Valid
-    @NotEmpty
+    @NotEmpty //Anotação que diz que o o campo não pode ser nulo
     private List<PhoneDTO> phones;
 }

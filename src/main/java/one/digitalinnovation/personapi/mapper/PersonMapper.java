@@ -12,7 +12,7 @@ public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
     @Mapping(target = "birthDate", source = "birthDate", dateFormat = "dd-MM-yyyy")
-    Person toModel(PersonDTO personDTO);
+    Person toModel(PersonDTO personDTO); //para converter um objeto DTO para um banco de dados, usar o nome toModel. Como se fosse uma convenção do Mapstructer para funcionar a convesão
 
     PersonDTO toDTO(Person person);
 }

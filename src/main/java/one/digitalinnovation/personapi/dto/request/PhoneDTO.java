@@ -22,7 +22,7 @@ public class PhoneDTO {
     @Enumerated(EnumType.STRING)
     private PhoneType type;
 
-    @NotEmpty
-    @Size(min = 13, max = 14)
+    @NotEmpty //Anotação que diz que o o campo não pode ser nulo
+    @Size(min = 13, max = 14) //anotação para informar o tamanho máximo e mínimo
     private String number;
 }
