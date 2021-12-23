@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.controller;
 
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.exceptions.PersonNotFoundException;
@@ -13,14 +14,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/people")
+@AllArgsConstructor(onConstructor = @__(@Autowired)) //com essa anotação, não precisa do construtor padrão, comentado abaixo
 public class PersonController {
 
     private PersonService personService;
 
-    @Autowired
-    public PersonController(PersonService personService) {
-        this.personService = personService;
-    }
+    //@Autowired
+    //public PersonController(PersonService personService) {
+    //    this.personService = personService;
+    //}
 
     @PostMapping //anotação POST, usado para criar um novo usuário
     @ResponseStatus(HttpStatus.CREATED)

@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.service;
 
+import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
@@ -10,10 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired)) //com essa anotação, não precisa do construtor padrão, comentado abaixo
+
 public class PersonService {
 
     private PersonRepository personRepository;
@@ -22,10 +24,10 @@ public class PersonService {
 
     //anotação para injetar o PersonRepository para dentro da classe. Pode ser usado o @Autowired com construtor, atributo ou método setter
     // usando dentro do construtor, facilita para criar testes unitários futuramente
-    @Autowired
+    /* @Autowired
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
-    }
+    } */
 
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
